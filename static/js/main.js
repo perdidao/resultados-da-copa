@@ -43,14 +43,14 @@ function notificaGol() {
         async: !0,
         success: function(r) {
             $.each(r, function(p, partida) {
-                "in progress" == partida.status && (placarHome != partida.home_team.goals ? (OneSignal.sendSelfNotification("Gol!!! ⚽", partida.home_team.code + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.code, "http://www.lucasalmeida.cc/copa", "https://onesignal.com/images/notification_logo.png", {
+                "in progress" == partida.status && (placarHome != partida.home_team.goals ? (OneSignal.sendSelfNotification("Gol!!! ⚽", partida.home_team.country + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.country, "http://www.lucasalmeida.cc/copa", "https://onesignal.com/images/notification_logo.png", {
                     notificationType: "news-feature"
                 }, [ {
                     id: "like-button",
                     text: "Placar",
                     icon: "http://i.imgur.com/N8SN8ZS.png",
                     url: "http://www.lucasalmeida.cc/copa"
-                } ]), placarHome = partida.home_team.goals) : placarAway != partida.away_team.goals && (OneSignal.sendSelfNotification("Gol!!! ⚽", partida.home_team.code + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.code, "http://www.lucasalmeida.cc/copa", "https://onesignal.com/images/notification_logo.png", {
+                } ]), placarHome = partida.home_team.goals) : placarAway != partida.away_team.goals && (OneSignal.sendSelfNotification("Gol!!! ⚽", partida.home_team.country + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.country, "http://www.lucasalmeida.cc/copa", "https://onesignal.com/images/notification_logo.png", {
                     notificationType: "news-feature"
                 }, [ {
                     id: "like-button",

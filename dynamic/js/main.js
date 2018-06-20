@@ -167,7 +167,7 @@ function notificaGol(){
           if(placarHome != partida.home_team.goals){
             OneSignal.sendSelfNotification(
               "Gol!!! ⚽",
-              partida.home_team.code + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.code,
+              partida.home_team.country + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.country,
               'http://www.lucasalmeida.cc/copa',
               'https://onesignal.com/images/notification_logo.png',
               {
@@ -184,7 +184,7 @@ function notificaGol(){
           } else if(placarAway != partida.away_team.goals){
             OneSignal.sendSelfNotification(
               "Gol!!! ⚽",
-              partida.home_team.code + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.code,
+              partida.home_team.country + " " + partida.home_team.goals + " x " + partida.away_team.goals + " " + partida.away_team.country,
               'http://www.lucasalmeida.cc/copa',
               'https://onesignal.com/images/notification_logo.png',
               {
