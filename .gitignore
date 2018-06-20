@@ -1,0 +1,6 @@
+# Pastas ignoradas:
+.sass-cache/
+node_modules/
+
+# Arquivos ignorados:
+package-lock.json

@@ -1,0 +1,52 @@
+/* Reset Global */
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,700");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+/* Estilos globais */
+* { box-sizing: border-box; }
+
+body { background-color: #3e4149; font: 400 16px "Encode Sans Condensed", Arial, Helvetica, sans-serif; color: #e6e6e1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+::-moz-selection { color: #FFF; background-color: #ff9999; }
+
+::selection { color: #FFF; background-color: #ff9999; }
+
+a { color: inherit; text-decoration: none; }
+
+strong { font-weight: 700; }
+
+#partidas { width: 90%; max-width: 520px; margin: 50px auto; }
+#partidas h1 { font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+#partidas #loading { width: 100%; text-align: center; }
+#partidas #partida { background-color: #444f5a; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+#partidas #partida .info { width: 100%; background-color: #e6e6e1; color: #444f5a; padding: 5px 0; text-align: center; }
+#partidas #partida .placar { padding: 20px 20px 5px; text-align: center; font-size: 22px; }
+#partidas #partida .placar i { font-size: 16px; margin: 0 5px; }
+#partidas #partida .placar .bandeira { margin: 0 5px; }
+#partidas #partida .placar .bandeira img { display: inline-block; height: 20px; }
+#partidas #partida .tempo { width: 100%; padding-bottom: 20px; text-align: center; }
+#partidas #partida .lances { width: 50%; padding: 20px; border-top: 1px solid #3e4149; }
+#partidas #partida .lances li { margin-bottom: 5px; }
+#partidas #partida .lances li i.yellow { color: #FFFF99; }
+#partidas #partida .lances li i.red { color: #ff9999; }
+#partidas #partida .lances li i.green { color: #00FF99; }
+#partidas #partida .lances li:last-child { margin: 0; }
+#partidas #partida .lances.home { float: left; text-align: left; }
+#partidas #partida .lances.home li i { margin-right: 5px; }
+#partidas #partida .lances.away { float: right; text-align: right; }
+#partidas #partida .lances.away li i { margin-left: 5px; }

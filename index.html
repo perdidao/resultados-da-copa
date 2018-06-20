@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Resultados do dia em tempo real</title>
+  <meta name="description" content="[DESCRIPTION]">
+  <meta name="author" content="Lucas Almeida">
+  <meta name="generator" content="lucasalmeida.cc | Consultoria e desenvolvimento web">
+  <meta name="theme-color" content="#06C">
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="static/css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+  
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "f9a4b5f4-f971-43b0-b75c-88bef8c0784f",
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <section id="partidas">
+
+    <h1>Partidas do dia</h1>
+
+    <div id="loading"><img src="static/img/spinner.gif" alt=""></div>
+
+  </section>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>

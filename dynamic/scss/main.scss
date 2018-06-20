@@ -1,0 +1,154 @@
+// Configurações iniciais
+@import 'compass';
+@import 'mixins';
+/* Reset Global */
+@include global-reset;
+
+// Cores
+$bkg:#3e4149;
+$dark:#444f5a;
+$red:#ff9999;
+$yellow:#FFFF99;
+$green:#00FF99;
+$pink:#ffc8c8;
+$grey:#e6e6e1;
+
+// Fontes
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,700');
+$Encode:'Encode Sans Condensed', Arial, Helvetica, sans-serif;
+
+$regular:400;
+$bold:700;
+
+/* Estilos globais */
+*{
+  box-sizing:border-box;
+}
+
+body{
+  background-color:$bkg;
+  font:$regular 16px $Encode;
+  color:$grey;
+  @include font-smoothing(on);
+}
+
+@include selection(#FFF,$red);
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+strong{
+  font-weight:$bold;
+}
+
+// Partidas
+#partidas{
+  width:90%;
+  max-width:520px;
+  margin:50px auto;
+
+  h1{
+    font-size:32px;
+    font-weight:$bold;
+    margin-bottom:20px;
+  }
+
+  #loading{
+    width:100%;
+    text-align:center;
+  }
+
+  #partida{
+    background-color:$dark;
+    border-radius:5px;
+    overflow:hidden;
+    margin-bottom:20px;
+
+    .info{
+      width:100%;
+      background-color:$grey;
+      color:$dark;
+      padding:5px 0;
+      text-align:center;
+    }
+
+    .placar{
+      padding:20px 20px 5px;
+      text-align:center;
+      font-size:22px;
+
+      i{
+        font-size:16px;
+        margin:0 5px;
+      }
+
+      .bandeira{
+        margin:0 5px;
+
+        img{
+          display:inline-block;
+          height:20px;
+        }
+      }
+    }
+
+    .tempo{
+      width:100%;
+      padding-bottom:20px;
+      text-align:center;
+    }
+
+    .lances{
+      width:50%;
+      padding:20px;
+      border-top:1px solid $bkg;
+
+      li{
+        margin-bottom:5px;
+
+        i{
+
+          &.yellow{
+            color:$yellow;
+          }
+
+          &.red{
+            color:$red;
+          }
+
+          &.green{
+            color:$green;
+          }
+        }
+
+        &:last-child{
+          margin:0;
+        }
+      }
+      
+      &.home{
+        float:left;
+        text-align:left;
+
+        li{
+          i{
+            margin-right:5px;
+          }
+        }
+      }
+
+      &.away{
+        float:right;
+        text-align:right;
+
+        li{
+          i{
+            margin-left:5px;
+          }
+        }
+      }
+    }
+  }
+}

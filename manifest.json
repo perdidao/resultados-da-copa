@@ -1,0 +1,34 @@
+{
+  "name": "Resultados do dia | Russia 2018",
+  "short_name": "Resultados",
+  "start_url": ".",
+  "display": "fullscreen",
+  "theme_color": "#ff9999",
+  "background_color": "#3e4149",
+  "description": "Resultados do dia | Russia 2018",
+  "icons": [{
+    "src": "static/img/ico48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "static/img/ico72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "static/img/ico96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "static/img/ico144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "static/img/ico168.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "static/img/ico192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}
