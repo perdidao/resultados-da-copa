@@ -5,7 +5,7 @@ function carregaPartidas() {
         dataType: "jsonp",
         async: !0,
         success: function(response) {
-            var eventosCasa, eventosFora, html = "<h1>Partidas do dia</h1>";
+            var eventosCasa, eventosFora, htmlAtual = "", htmlProximas = "", html = "";
             $.each(response, function(p, partida) {
                 var currentStatus = partida.status;
                 switch (cidade = partida.venue, estadio = partida.location, datahora = new Date(partida.datetime), 
@@ -24,13 +24,17 @@ function carregaPartidas() {
                     "substitution-in" == tipoEvento ? eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + '</strong> <i class="fas fa-arrow-right green"></i></li>' : "substitution-out" == tipoEvento ? eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + '</strong> <i class="fas fa-arrow-left red"></i></li>' : "goal" == tipoEvento ? eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + '</strong> <i class="fas fa-futbol"></i></li>' : "goal-penalty" == tipoEvento ? eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + '</strong> <i class="fas fa-futbol"></i></li>' : "goal-own" == tipoEvento ? eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + '</strong> <i class="fas fa-futbol red"></i></li>' : "yellow-card" == tipoEvento ? eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + '</strong> <i class="fas fa-square yellow"></i></li>' : "red-card" == tipoEvento ? eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + '</strong> <i class="fas fa-square red"></i></li>' : eventosFora += "<li>" + jogadorEvento + " <strong>" + tempoEvento + "</strong></li>";
                 }), currentStatus) {
                   case "future":
-                    html += '<section id="partida"><p class="info">' + horaTratada + " no " + estadio + " em " + cidade + '</p><p class="placar">  <span class="bandeira"><img src="' + bandeiraCasa + '" alt=""></span> ' + tituloCasa + "  <strong>" + golsCasa + '</strong>  <i class="fas fa-times"></i>  <strong>' + golsFora + "</strong> " + tituloFora + '  <span class="bandeira"><img src="' + bandeiraFora + '" alt=""></span></p><p class="tempo"><i class="fas fa-clock"></i> ' + tempoDecorrido + "</p></section>";
+                    htmlProximas += '<section id="partida"><p class="info">' + horaTratada + " no " + estadio + " em " + cidade + '</p><p class="placar">  <span class="bandeira"><img src="' + bandeiraCasa + '" alt=""></span> ' + tituloCasa + "  <strong>" + golsCasa + '</strong>  <i class="fas fa-times"></i>  <strong>' + golsFora + "</strong> " + tituloFora + '  <span class="bandeira"><img src="' + bandeiraFora + '" alt=""></span></p><p class="tempo"><i class="fas fa-clock"></i> ' + tempoDecorrido + "</p></section>";
+                    break;
+
+                  case "in progress":
+                    htmlAtual += '<section id="partida"><p class="info">' + horaTratada + " no " + estadio + " em " + cidade + '</p><p class="placar">  <span class="bandeira"><img src="' + bandeiraCasa + '" alt=""></span> ' + tituloCasa + "  <strong>" + golsCasa + '</strong>  <i class="fas fa-times"></i>  <strong>' + golsFora + "</strong> " + tituloFora + '  <span class="bandeira"><img src="' + bandeiraFora + '" alt=""></span></p><p class="tempo"><i class="fas fa-clock"></i> ' + tempoDecorrido + '</p><ul class="lances home">' + eventosCasa + '</ul><ul class="lances away">' + eventosFora + "</ul></section>";
                     break;
 
                   default:
-                    html += '<section id="partida"><p class="info">' + horaTratada + " no " + estadio + " em " + cidade + '</p><p class="placar">  <span class="bandeira"><img src="' + bandeiraCasa + '" alt=""></span> ' + tituloCasa + "  <strong>" + golsCasa + '</strong>  <i class="fas fa-times"></i>  <strong>' + golsFora + "</strong> " + tituloFora + '  <span class="bandeira"><img src="' + bandeiraFora + '" alt=""></span></p><p class="tempo"><i class="fas fa-clock"></i> ' + tempoDecorrido + '</p><ul class="lances home">' + eventosCasa + '</ul><ul class="lances away">' + eventosFora + "</ul></section>";
+                    html += '<section id="partida" class="completada"><p class="info">' + horaTratada + " no " + estadio + " em " + cidade + '</p><p class="placar">  <span class="bandeira"><img src="' + bandeiraCasa + '" alt=""></span> ' + tituloCasa + "  <strong>" + golsCasa + '</strong>  <i class="fas fa-times"></i>  <strong>' + golsFora + "</strong> " + tituloFora + '  <span class="bandeira"><img src="' + bandeiraFora + '" alt=""></span></p><p class="tempo"><i class="fas fa-clock"></i> ' + tempoDecorrido + '</p><ul class="lances home">' + eventosCasa + '</ul><ul class="lances away">' + eventosFora + "</ul></section>";
                 }
-            }), $("#partidas").html(html);
+            }), $("#partidas").html("<h1>Partidas do dia</h1>" + htmlAtual + htmlProximas + html);
         }
     });
 }

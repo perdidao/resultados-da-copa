@@ -66,6 +66,21 @@ strong{
     overflow:hidden;
     margin-bottom:20px;
 
+    &.completada{
+      background-color:$bkg; 
+      border:1px solid $dark;
+      color:#888;
+
+      .info{
+        background-color:#888;
+        color:$bkg;
+      }
+
+      .lances{
+        border-top-color:$dark;
+      }
+    }
+
     .info{
       width:100%;
       background-color:$grey;

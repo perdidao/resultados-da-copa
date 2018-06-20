@@ -34,6 +34,9 @@ strong { font-weight: 700; }
 #partidas h1 { font-size: 32px; font-weight: 700; margin-bottom: 20px; }
 #partidas #loading { width: 100%; text-align: center; }
 #partidas #partida { background-color: #444f5a; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+#partidas #partida.completada { background-color: #3e4149; border: 1px solid #444f5a; color: #888; }
+#partidas #partida.completada .info { background-color: #888; color: #3e4149; }
+#partidas #partida.completada .lances { border-top-color: #444f5a; }
 #partidas #partida .info { width: 100%; background-color: #e6e6e1; color: #444f5a; padding: 5px 0; text-align: center; }
 #partidas #partida .placar { padding: 20px 20px 5px; text-align: center; font-size: 22px; }
 #partidas #partida .placar i { font-size: 16px; margin: 0 5px; }

@@ -7,7 +7,10 @@ function carregaPartidas(){
     async: true,
     success:function(response){
 
-      var html = '<h1>Partidas do dia</h1>', eventosCasa, eventosFora;
+      var htmlInicial = '<h1>Partidas do dia</h1>';
+      var htmlAtual = '';
+      var htmlProximas = '';
+      var html = '', eventosCasa, eventosFora;
 
       $.each(response, function(p,partida){
         
@@ -103,7 +106,7 @@ function carregaPartidas(){
           
           // Partida rolando
           case 'future':
-          html+='<section id="partida">'+
+          htmlProximas+='<section id="partida">'+
           '<p class="info">'+horaTratada+' no '+estadio+' em '+cidade+'</p>'+
           '<p class="placar">'+
           '  <span class="bandeira"><img src="'+bandeiraCasa+'" alt=""></span> '+
@@ -118,9 +121,8 @@ function carregaPartidas(){
           '</section>'; 
           break;
 
-          // Padrão
-          default:
-          html+='<section id="partida">'+
+          case 'in progress':
+          htmlAtual+='<section id="partida">'+
           '<p class="info">'+horaTratada+' no '+estadio+' em '+cidade+'</p>'+
           '<p class="placar">'+
           '  <span class="bandeira"><img src="'+bandeiraCasa+'" alt=""></span> '+
@@ -138,13 +140,36 @@ function carregaPartidas(){
           '<ul class="lances away">'+
           eventosFora+
           '</ul>'+
-          '</section>'; 
+          '</section>';
+          break;
+
+          // Padrão
+          default:
+          html+='<section id="partida" class="completada">'+
+          '<p class="info">'+horaTratada+' no '+estadio+' em '+cidade+'</p>'+
+          '<p class="placar">'+
+          '  <span class="bandeira"><img src="'+bandeiraCasa+'" alt=""></span> '+
+          tituloCasa+
+          '  <strong>'+golsCasa+'</strong>'+
+          '  <i class="fas fa-times"></i>'+
+          '  <strong>'+golsFora+'</strong> '+
+          tituloFora+
+          '  <span class="bandeira"><img src="'+bandeiraFora+'" alt=""></span>'+
+          '</p>'+
+          '<p class="tempo"><i class="fas fa-clock"></i> '+tempoDecorrido+'</p>'+
+          '<ul class="lances home">'+
+          eventosCasa+
+          '</ul>'+
+          '<ul class="lances away">'+
+          eventosFora+
+          '</ul>'+
+          '</section>';
 
         }
         
       });
 
-      $('#partidas').html(html);
+      $('#partidas').html(htmlInicial+htmlAtual+htmlProximas+html);
 
     }
   });
