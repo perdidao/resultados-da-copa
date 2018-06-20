@@ -167,3 +167,57 @@ strong{
     }
   }
 }
+
+// Resposividade
+@media screen and(max-width:420px){
+  #partidas{
+    width:94%;
+    margin:30px auto;
+  
+    h1{
+      font-size:24px;
+      margin-bottom:15px;
+    }
+  
+    #partida{
+
+      .info{
+        font-size:12px;
+      }
+  
+      .placar{
+        padding:20px 5px 10px;
+        font-size:18px;
+  
+        i{
+          font-size:14px;
+        }
+  
+        .bandeira{
+          margin:0 2px;
+  
+          img{
+            display:inline-block;
+            height:15px;
+          }
+        }
+      }
+  
+      .tempo{
+        padding-bottom:20px;
+      }
+  
+      .lances{
+        width:50%;
+        padding:20px 10px 20px;
+        border-top:1px solid $bkg;
+  
+        li{
+          margin-bottom:5px;
+          font-size:12px;
+          text-transform:capitalize;
+        }
+      }
+    }
+  } 
+}

@@ -53,3 +53,14 @@ strong { font-weight: 700; }
 #partidas #partida .lances.home li i { margin-right: 5px; }
 #partidas #partida .lances.away { float: right; text-align: right; }
 #partidas #partida .lances.away li i { margin-left: 5px; }
+
+@media screen and (max-width: 420px) { #partidas { width: 94%; margin: 30px auto; }
+  #partidas h1 { font-size: 24px; margin-bottom: 15px; }
+  #partidas #partida .info { font-size: 12px; }
+  #partidas #partida .placar { padding: 20px 5px 10px; font-size: 18px; }
+  #partidas #partida .placar i { font-size: 14px; }
+  #partidas #partida .placar .bandeira { margin: 0 2px; }
+  #partidas #partida .placar .bandeira img { display: inline-block; height: 15px; }
+  #partidas #partida .tempo { padding-bottom: 20px; }
+  #partidas #partida .lances { width: 50%; padding: 20px 10px 20px; border-top: 1px solid #3e4149; }
+  #partidas #partida .lances li { margin-bottom: 5px; font-size: 12px; text-transform: capitalize; } }
