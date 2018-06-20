@@ -13,8 +13,8 @@ function carregaPartidas() {
                 golsCasa = partida.home_team.goals, golsFora = partida.away_team.goals, codigoCasa = partida.home_team.code, 
                 codigoFora = partida.away_team.code, tituloCasa = partida.home_team.country, tituloFora = partida.away_team.country, 
                 nomeCasa = partida.home_team.country.replace(" ", "-").toLowerCase(), nomeFora = partida.away_team.country.replace(" ", "-").toLowerCase(), 
-                bandeiraCasa = "https://cdn.countryflags.com/thumbs/" + nomeCasa + "/flag-800.png", 
-                bandeiraFora = "https://cdn.countryflags.com/thumbs/" + nomeFora + "/flag-800.png", 
+                "england" == nomeCasa ? bandeiraCasa = "https://cdn.countryflags.com/thumbs/united-kingdom/flag-800.png" : "korea-republic" == nomeCasa ? bandeiraCasa = "https://cdn.countryflags.com/thumbs/south-korea/flag-800.png" : bandeiraCasa = "https://cdn.countryflags.com/thumbs/" + nomeCasa + "/flag-800.png", 
+                "england" == nomeFora ? bandeiraFora = "https://cdn.countryflags.com/thumbs/united-kingdom/flag-800.png" : "korea-republic" == nomeFora ? bandeiraFora = "https://cdn.countryflags.com/thumbs/south-korea/flag-800.png" : bandeiraFora = "https://cdn.countryflags.com/thumbs/" + nomeFora + "/flag-800.png", 
                 tempo = partida.time, "half-time" == tempo ? tempoDecorrido = "Intervalo" : "full-time" == tempo ? tempoDecorrido = "Partida encerrada" : null == tempo ? tempoDecorrido = "Começa em breve" : tempoDecorrido = tempo + " decorridos", 
                 eventosCasa = "", $.each(partida.home_team_events, function(ec, ecasa) {
                     tipoEvento = ecasa.type_of_event, jogadorEvento = ecasa.player, tempoEvento = ecasa.time, 

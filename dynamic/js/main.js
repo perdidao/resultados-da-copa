@@ -35,9 +35,22 @@ function carregaPartidas(){
 
         nomeCasa = partida.home_team.country.replace(' ','-').toLowerCase();
         nomeFora = partida.away_team.country.replace(' ','-').toLowerCase();
+        
+        if(nomeCasa == 'england'){
+          bandeiraCasa = 'https://cdn.countryflags.com/thumbs/united-kingdom/flag-800.png';
+        } else if(nomeCasa == 'korea-republic'){
+          bandeiraCasa = 'https://cdn.countryflags.com/thumbs/south-korea/flag-800.png';
+        } else {
+          bandeiraCasa = 'https://cdn.countryflags.com/thumbs/'+nomeCasa+'/flag-800.png';
+        }
 
-        bandeiraCasa = 'https://cdn.countryflags.com/thumbs/'+nomeCasa+'/flag-800.png';
-        bandeiraFora = 'https://cdn.countryflags.com/thumbs/'+nomeFora+'/flag-800.png';
+        if(nomeFora == 'england'){
+          bandeiraFora = 'https://cdn.countryflags.com/thumbs/united-kingdom/flag-800.png';
+        } else if(nomeFora == 'korea-republic'){
+          bandeiraFora = 'https://cdn.countryflags.com/thumbs/south-korea/flag-800.png';
+        } else {
+          bandeiraFora = 'https://cdn.countryflags.com/thumbs/'+nomeFora+'/flag-800.png';
+        }
 
         tempo = partida.time;
         if(tempo == 'half-time'){
