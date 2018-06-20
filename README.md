@@ -4,7 +4,7 @@ Este web app consome a API json da copa do mundo criada por [Eric Stiens](https:
 
 Utiliza jQuery para a interação e alimentação, SASS para os estilos e roda 100% client side.
 
-Está disponível para uso no endereço [lucasalmeida.cc/copa](http://www.lucasalmeida.cc/copa).
+Está disponível para uso no endereço [lucasalmeida.cc/copa](http://lucasalmeida.cc/copa).
 
 ## Próximos passos:
 - Adicionar página de consulta de jogos anteriores
