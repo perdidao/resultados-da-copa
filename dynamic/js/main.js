@@ -76,7 +76,7 @@ function carregaPartidas(){
           } else if(tipoEvento == 'goal'){
             eventosCasa += '<li><i class="fas fa-futbol"></i> <strong>'+tempoEvento+'</strong> '+jogadorEvento+'</li>';
           } else if(tipoEvento == 'goal-penalty'){
-            eventosCasa += '<li><i class="fas fa-futbol"></i> <strong>'+tempoEvento+'</strong> '+jogadorEvento+'</li>';
+            eventosCasa += '<li><i class="fas fa-futbol"></i> <strong>'+tempoEvento+'</strong> '+jogadorEvento+' (P)</li>';
           } else if(tipoEvento == 'goal-own'){
             eventosCasa += '<li><i class="fas fa-futbol red"></i> <strong>'+tempoEvento+'</strong> '+jogadorEvento+'</li>';
           } else if(tipoEvento == 'yellow-card'){
@@ -102,7 +102,7 @@ function carregaPartidas(){
           } else if(tipoEvento == 'goal'){
             eventosFora += '<li>'+jogadorEvento+' <strong>'+tempoEvento+'</strong> <i class="fas fa-futbol"></i></li>';
           } else if(tipoEvento == 'goal-penalty'){
-            eventosFora += '<li>'+jogadorEvento+' <strong>'+tempoEvento+'</strong> <i class="fas fa-futbol"></i></li>';
+            eventosFora += '<li>(P) '+jogadorEvento+' <strong>'+tempoEvento+'</strong> <i class="fas fa-futbol"></i></li>';
           } else if(tipoEvento == 'goal-own'){
             eventosFora += '<li>'+jogadorEvento+' <strong>'+tempoEvento+'</strong> <i class="fas fa-futbol red"></i></li>';
           } else if(tipoEvento == 'yellow-card'){
